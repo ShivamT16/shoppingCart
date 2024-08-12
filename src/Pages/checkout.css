@@ -1,0 +1,91 @@
+.image {
+    height: 6rem;
+    width: 6rem;
+    border: none;
+    padding: 2px;
+  }
+  .checkout {
+    border: 2px solid #24c6dc;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 2px 0rem;
+  }
+  .check {
+    border-bottom: 2px solid #514a9d;
+    border-right: 2px solid #514a9d;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: right;
+    padding: 1rem;
+    margin: 0rem 22rem;
+  }
+  
+  .check1 {
+    border-left: 2px solid #514a9d;
+    border-top: 2px solid #514a9d;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: right;
+    padding: 0rem 1rem;
+    margin: 0rem 22rem;
+  }
+  
+  .checkoutProduct {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-items: center;
+    align-items: center;
+  }
+  
+  .checkoutAdd {
+    border: 2px solid #24c6dc;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .totalPrice {
+    padding-left: 12rem;
+  }
+  
+  .checkBtn {
+    margin: 1rem;
+    padding: 0.5rem;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .check {
+      padding: 1rem;
+      margin: 2rem 1rem;
+    }
+    .check1 {
+      padding: 0rem;
+      margin: 0rem 1rem;
+    }
+    .checkout {
+      gap: 0rem;
+      margin: 2px 0rem;
+    }
+    .checkoutProduct {
+      gap: 0rem;
+      padding: 0rem;
+    }
+    .totalPrice {
+      padding-left: 0rem;
+    }
+    .image {
+      padding: 0rem 5rem;
+    }
+    .checkoutAdd {
+      padding: 0rem;
+      margin: 0.5rem;
+      flex-direction: column;
+    }
+  }
+  

@@ -1,0 +1,61 @@
+.product {
+    background-color: whitesmoke;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding-bottom: 5rem;
+    padding-top: 2rem;
+    align-items: center;
+    justify-content: center;
+  }
+  .product1 {
+    border: 1.9px solid #514a9d;
+    padding: 1rem;
+    border-radius: 20px;
+  }
+  
+  .filter {
+    display: flex;
+  }
+  .filter1 {
+    background-color: whitesmoke;
+    border-right: 2px solid grey;
+    margin: 0rem 0rem;
+    padding: 2rem;
+  }
+  .filter-1{
+    display: none;
+  }
+  .filter2 {
+    width: 10rem;
+    text-align: left;
+    font-size: 20px;
+  }
+  .filter3 {
+    width: 10rem;
+    padding: 0.4rem 0rem;
+    text-align: left;
+    font-size: 20px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .filter {
+      display: flex;
+      flex-direction: column;
+    }
+    .filter1 {
+      display: none;
+    }
+    .filter-1{
+      display: flex;
+      background-color: whitesmoke;
+    }
+    .filterSection{
+      padding: 1rem 2rem;
+    }
+    .apply-btn{
+      width: fit-content;
+      margin: 1rem 2rem;
+    }
+  } 
+  
