@@ -4,16 +4,15 @@ import { ToastContainer } from "react-toastify";
 import Drawer from '@mui/material/Drawer';
 import "./product.css";
 
-import { CartContext, ProductContext } from "..";
-
+import { CartContext } from "..";
 import { Loader } from "./Loader";
 
-export function Product({ products, categories }) {
-  const { handleCartUpdate, cartNotify, cart } = useContext(
-    CartContext
-  );
-  const { handleProduct } = useContext(ProductContext);
+export function Product({ products }) {
 
+  const { handleCartUpdate, cartNotify, cart } = useContext(CartContext);
+  // const { handleProduct } = useContext(ProductContext);
+
+  const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [filter, setFilter] = useState({
     sortFilter: "",
@@ -21,11 +20,11 @@ export function Product({ products, categories }) {
     ratingFilter: 0
   });
   const [state, setState] = useState({ bottom: false });
+  const categories = [ { _id: 1, category: "Wired" }, { _id: 2, category: "Wireless" }, { _id: 3, category: "Speaker" } ];
+
   const toggleDrawer = (open) => () => {
     setState({ bottom: open });
   };
-
-  const navigate = useNavigate();
 
   useEffect(() => {
     Mainfunction();
@@ -118,6 +117,7 @@ export function Product({ products, categories }) {
           <p className="filter2">
             <strong>Category</strong>
           </p>
+          
           {categories.map(({ _id, category }) => (
             <div className="filter3" key={_id}>
               <input
@@ -166,25 +166,22 @@ export function Product({ products, categories }) {
       </div>
 
       {loading && <Loader />}
+
       <div className="product">
         {ratingFiltered.map((item) => {
           const { id, name, price, image, rating } = item;
           return (
-            <div
-              key={id}
-              className="product1"
-              onClick={() => handleProduct(id)}
-            >
-              <Link className="link" to="/productDetail">
+            <div key={id} className="product1" >
+              <div>
                 <img alt="product img" src={image} />
                 <ul>{name}</ul>
                 <p>
-                  INR:{price}  ⭐{rating}
+                  ₹{price}  ⭐{rating}
                 </p>
-              </Link>
+              </div>
               {cart.find((element) => element.id === item.id) ? (
                 <Link to="/cart">
-                  <button> Go to Cart</button>
+                  <button> Go to Cart </button>
                 </Link>
               ) : (
                 <button

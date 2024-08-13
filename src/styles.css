@@ -5,6 +5,7 @@
     height: justify;
     width: justify;
     position: relative;
+    margin: 0;
   }
   
   img {
@@ -61,7 +62,7 @@
   
   .link {
     text-decoration: none;
-    color: black;
+    color: blueviolet;
   }
   .link1 {
     text-decoration: none;

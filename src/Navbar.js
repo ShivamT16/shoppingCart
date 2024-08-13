@@ -2,13 +2,13 @@ import "./styles.css";
 import { NavLink, Link } from "react-router-dom";
 import { useState, useContext } from "react";
 
-import { DataBase} from "./Data/productsDB";
-import { ProductContext, AuthContext } from "./index";
+import DataBase from "./Data/test.json";
+import { AuthContext, CartContext } from "./index";
 
 export const Navbar = () => {
 
   const [search, setSearch] = useState("");
-  const { handleProduct } = useContext(ProductContext);
+  const {cart} = useContext(CartContext);
   const { isLoggedIn, handleLogin } = useContext(AuthContext);
 
     return (
@@ -28,11 +28,11 @@ export const Navbar = () => {
           {search && <span className="dismiss" onClick={() => setSearch("")} >❌</span> }
         </div>
         <div className="nav3">
-          <NavLink className="navLink" to="/product">
+          <NavLink className="navLink" to="/">
             Explore
           </NavLink>
-          <NavLink className="navLink" to="/cart">
-            Cart
+          <NavLink className="navLink" style={{marginTop: "-.2rem"}} to="/cart">
+            Cart({cart.length > 0 ? "🛒" + cart.length : "🛒"})
           </NavLink>
           {isLoggedIn ? (
             <NavLink className="navLink" onClick={handleLogin}>
@@ -48,7 +48,7 @@ export const Navbar = () => {
 
       {search &&
       <div className="search-tab">
-        {DataBase.filter(
+        {DataBase.data.filter(
           ({ name, category }) =>
             name
               .toUpperCase()
@@ -61,14 +61,8 @@ export const Navbar = () => {
         ).map((item) => {
           const { id, name, category, image } = item;
           return (
-            <div
-              key={id}
-              onClick={() => {
-                handleProduct(id);
-                setSearch("");
-              }}
-            >
-              <Link className="link2" to="/productDetail">
+            <div key={id} >
+              <Link className="link2" to="">
                 <img
                   style={{ height: "2rem", width: "2rem", border: "none" }}
                   alt="voice"

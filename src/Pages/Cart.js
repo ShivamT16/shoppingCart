@@ -17,13 +17,15 @@ export const Cart = () => {
 
   return (
     <div>
+
       <div className="cartHeader">
         <p> Total Item In The Cart - {cart.length} </p>
         <p>Total price-  ₹ {totalPrice}</p>
-        <Link className="link" to="/address">
+        <Link className="link" to="/checkout">
           {cart.length > 0 && <button className="nextBtn">Next</button>}
         </Link>
       </div>
+
       <div className="cart">
         {cart.length > 0 ? (
           cart.map((item) => {
@@ -33,7 +35,7 @@ export const Cart = () => {
               <div key={id} className="cartProduct">
                 <img className="cartImage" alt="product img" src={image} />
                 <ul>{name}</ul>
-                <ul>INR:{price}</ul>
+                <ul>₹{price}</ul>
                 <div>
                   <button
                     onClick={() => handleDecreaseQuantity(item)}
@@ -64,17 +66,19 @@ export const Cart = () => {
           })
         ) : (
           <h2>
-            Cart is Empty, please
-            <Link className="link" to="/product">
-              "Explore"
+            Cart is Empty, please 
+            <Link className="link" to="/">
+               "Explore"
             </Link>{" "}
           </h2>
         )}
       </div>
-      <Link className="link" to="/address">
+
+      <Link className="link" to="/checkout">
         {cart.length > 2 && <button className="nextBtn">Next</button>}
       </Link>
       <ToastContainer autoClose={2000} />
+
     </div>
   );
 };

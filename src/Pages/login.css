@@ -1,0 +1,28 @@
+.login {
+    border: 2px solid #514a9d;
+    background-color: whitesmoke;
+    border-radius: 2rem;
+    margin: 5rem 30rem;
+    padding: 4rem 0rem;
+  }
+  .loginInput {
+    border: 2px solid #24c6dc;
+    border-radius: 0.5rem;
+    padding: 5px;
+    margin: 2px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .login {
+      margin: 4rem 2rem;
+      padding: 3rem 1rem;
+    }
+  }
+  
+  @media screen and (min-width: 1000px) {
+    .login {
+      margin: 4rem 2rem;
+      padding: 3rem 1rem;
+    }
+  }
+  
