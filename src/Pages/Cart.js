@@ -7,13 +7,7 @@ import { CartContext } from "..";
 
 export const Cart = () => {
   const {
-    cart,
-    handleDelete,
-    handleIncreaseQuantity,
-    handleDecreaseQuantity,
-    totalPrice,
-    deleteNotify
-  } = useContext(CartContext);
+    cart, handleDelete, handleIncreaseQuantity, handleDecreaseQuantity, totalPrice, deleteNotify } = useContext(CartContext);
 
   return (
     <div>
