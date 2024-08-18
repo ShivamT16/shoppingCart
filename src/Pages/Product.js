@@ -10,7 +10,6 @@ import { Loader } from "./Loader";
 export function Product({ products }) {
 
   const { handleCartUpdate, cartNotify, cart } = useContext(CartContext);
-  // const { handleProduct } = useContext(ProductContext);
 
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
@@ -179,6 +178,7 @@ export function Product({ products }) {
                   ₹{price}  ⭐{rating}
                 </p>
               </div>
+              
               {cart.find((element) => element.id === item.id) ? (
                 <Link to="/cart">
                   <button> Go to Cart </button>
@@ -192,7 +192,7 @@ export function Product({ products }) {
                 >
                   Add to Cart
                 </button>
-              )}
+              )} 
               
             </div>
           );

@@ -27,6 +27,7 @@ export const Navbar = () => {
           />
           {search && <span className="dismiss" onClick={() => setSearch("")} >❌</span> }
         </div>
+
         <div className="nav3">
           <NavLink className="navLink" to="/">
             Explore
